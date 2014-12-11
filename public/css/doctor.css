@@ -1,0 +1,85 @@
+@charset "utf-8";
+/* CSS Document */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,code,del,dfn,em,img,q,dl,dt,dd,ol,ul,li,fieldset,form,input,textarea,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,i,em{
+    margin:0;
+    padding:0;
+    font-style:normal;
+    transition: 1s;
+    -moz-transition: 1s;	/* Firefox 4 */
+    -webkit-transition:1s;	/* Safari 和 Chrome */
+    -o-transition: 1s;
+}
+
+body{
+	background-color:#FFF;
+	overflow-x: hidden;
+	-moz-user-select: none; 
+	-webkit-user-select: none;  /*webkit浏览器*/
+	-ms-user-select: none;   /*IE10*/
+	-khtml-user-select: none; /*早期浏览器*/
+	user-select: none;
+}
+
+#wrap{
+	position:absolute;
+    width:700px;
+    top:50px;
+    height:250px;
+}
+
+#Imgdiv{
+	position: absolute;
+}
+
+.myrect{
+	position: absolute;
+	border-style: solid; 
+	border-width: 2px;
+    border-color: yellow;
+    border-radius:5px;
+    -moz-border-radius:5px;
+}
+
+.myrect1{
+    border-color: yellow;
+}
+
+.myrect2{
+    border-color: red;
+    -webkit-animation-name: shineRed; 
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite; 
+}
+
+@-webkit-keyframes  shineRed {
+from { -webkit-box-shadow: 0 0 5px #bbb; }
+50% { -webkit-box-shadow: 0 0 15px red; }
+to { -webkit-box-shadow: 0 0 5px #bbb; }
+}
+
+#mycontent{
+	position: absolute;
+}
+
+#left{
+    position: absolute;
+    overflow : auto;
+}
+
+#right{
+    position: absolute;
+}
+
+.mytext{
+	position: absolute;
+    overflow-x:visible;
+    overflow-y:visible;
+    resize:none
+}
+
+.tip{
+    position: absolute;
+    color: #b94a48
+}
+
+

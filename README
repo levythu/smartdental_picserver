@@ -1,0 +1,10 @@
+How to deploy?
+
+    -- Install Nodejs
+    -- Install npm
+    -- Install Mongodb
+
+    -- Run commands:
+
+        npm install
+        sudo npm start
