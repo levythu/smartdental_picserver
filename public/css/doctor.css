@@ -4,10 +4,6 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acron
     margin:0;
     padding:0;
     font-style:normal;
-    transition: 1s;
-    -moz-transition: 1s;	/* Firefox 4 */
-    -webkit-transition:1s;	/* Safari 和 Chrome */
-    -o-transition: 1s;
 }
 
 body{
@@ -31,31 +27,6 @@ body{
 	position: absolute;
 }
 
-.myrect{
-	position: absolute;
-	border-style: solid; 
-	border-width: 2px;
-    border-color: yellow;
-    border-radius:5px;
-    -moz-border-radius:5px;
-}
-
-.myrect1{
-    border-color: yellow;
-}
-
-.myrect2{
-    border-color: red;
-    -webkit-animation-name: shineRed; 
-    -webkit-animation-duration: 3s;
-    -webkit-animation-iteration-count: infinite; 
-}
-
-@-webkit-keyframes  shineRed {
-from { -webkit-box-shadow: 0 0 5px #bbb; }
-50% { -webkit-box-shadow: 0 0 15px red; }
-to { -webkit-box-shadow: 0 0 5px #bbb; }
-}
 
 #mycontent{
 	position: absolute;
@@ -74,12 +45,32 @@ to { -webkit-box-shadow: 0 0 5px #bbb; }
 	position: absolute;
     overflow-x:visible;
     overflow-y:visible;
-    resize:none
+    resize:none;
 }
 
 .tip{
     position: absolute;
-    color: #b94a48
+    color: #b94a48;
+}
+
+#mycanvas{
+    position:absolute;
+    left:0;
+    top:0;
+}
+
+#arrow{
+    position:absolute;
+    height:57px;
+    width:113px;
+    background-image:url(1.png);
+}
+
+.transition{
+    transition: 2s;
+    -moz-transition: 2s;	/* Firefox 4 */
+    -webkit-transition:2s;	/* Safari 和 Chrome */
+    -o-transition: 2s;
 }
 
 

@@ -10,7 +10,6 @@
         <script>
             function load()
             {
-                $('#right').hide();
                 var myurl="<%= picurl %>";
                 var newdata = JSON.parse('<%- notate %>');
                 myimage.src= myurl;
@@ -19,7 +18,7 @@
         </script>
     </head>
 
-      <body onload="load()">
+    <body onload="load()">
         <header class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
@@ -46,7 +45,6 @@
             <div id='left'>
                 <div id='Imgdiv'>
                     <img id="myimg"></img>
-                    <canvas id="mycanvas"></canvas>
                 </div>
             </div>
             <div id='right'>
@@ -60,4 +58,5 @@
             </div>
         </div>
     </body>
+
 </html>

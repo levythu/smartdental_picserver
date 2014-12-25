@@ -44,6 +44,10 @@ router.use(function(req, res, next)
 router.post('/', function(req, res)
 {
     var toi = JSON.parse(req.rawData);
+    for (var i=0;i<toi.length;i++)
+    {
+        toi[i].data=toi[i].data.replace(/"/g,"\\\"").replace(/'/g,"\\\"")
+    }
     db[PIC_DB].update({caseid: req.query.caseid},
     {
         $set: {notate: toi}
@@ -65,7 +69,7 @@ router.get('/', function(req, res)
         res.render("doctor",
         {
             picurl: docs[0].picurl,
-            notate: JSON.stringify(docs[0].notate).replace(/'/g,'"')
+            notate: JSON.stringify(docs[0].notate).replace(/\\n/g," ")
         });
     });
 });

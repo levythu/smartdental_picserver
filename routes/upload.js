@@ -34,13 +34,19 @@ router.post('/', function(req, res)
         res.redirect("/upload?caseid="+req.query.caseid);
         return;
     }
+
     if (thefile instanceof Array)
         thefile=thefile[0];
     db[PIC_DB].insert(
     {
         caseid: req.query.caseid,
         picurl: thefile.path.substr(6),
-        notate: []
+        notate: [],
+        pic_name: req.body.name,
+        position: req.body.area,
+        belongs:  req.body.uid,
+        date:     (new Date()).getTime(),
+        delete:   0
     },function()
     {
         res.redirect("/edit?caseid="+req.query.caseid);
