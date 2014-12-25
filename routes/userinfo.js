@@ -12,11 +12,23 @@ router.get('/', function(req, res) {
         res.send("[]");
         return;
     }
-    db[PIC_DB].find(
-    {
+    var qr={
         belongs:  req.query.user+"",
         delete:   0
-    },function(err,docs)
+    };
+    if (req.query.read!=null)
+    {
+        qr.read=req.query.read-0;
+    }
+    if (req.query.record!=null)
+    {
+        qr.record=req.query.record-0;
+    }
+    if (req.query.hide!=null)
+    {
+        qr.hide=req.query.hide-0;
+    }
+    db[PIC_DB].find(qr,function(err,docs)
     {
         if (err || docs.length==0)
         {

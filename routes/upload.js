@@ -46,7 +46,10 @@ router.post('/', function(req, res)
         position: req.body.area,
         belongs:  req.body.uid,
         date:     (new Date()).getTime(),
-        delete:   0
+        delete:   0,
+        record:   0,
+        read:     0,
+        hide:     0
     },function()
     {
         res.redirect("/edit?caseid="+req.query.caseid);
