@@ -9,7 +9,7 @@ var USER_DB=model.user;
 router.get('/', function(req, res) {
     if (req.query.user==null)
     {
-        res.send("[]");
+        res.send("{}");
         return;
     }
     var qr={
@@ -32,7 +32,10 @@ router.get('/', function(req, res) {
     {
         if (err || docs.length==0)
         {
-            res.send("[]");
+            var ret={};
+            ret._id=req.query.user+"";
+            ret.pic_info=[];
+            res.send(JSON.stringify(ret));
             return;
         }
         var ret=[];
