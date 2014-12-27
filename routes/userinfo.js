@@ -142,23 +142,35 @@ router.get('/tooth', function(req, res) {
         {
             obj={};
             if (docs[i].tooth==null)
-                obj.tooth=0;
+                obj.position=0;
             else
-                obj.tooth=docs[i].tooth;
+                obj.position=docs[i].tooth-0;
 
             if (docs[i].diagnose==null)
                 obj.diagnose="暂无诊断信息";
             else
                 obj.diagnose=docs[i].diagnose;
 
-            obj.caseid=docs[i].caseid;
+            if (docs[i].treatment==null)
+                obj.treatment="暂无治疗方案";
+            else
+                obj.treatment=docs[i].treatment;
+
+            if (docs[i].status==null)
+                obj.status="存在";
+            else
+                obj.status=docs[i].status;
+
+            if (docs[i].tname==null)
+                obj.name="下中切牙";
+            else
+                obj.name=docs[i].tname;
+
+            obj.recordId=docs[i].caseid;
             ret.push(obj);
         }
-        var ret2={};
-        ret2._id=req.query.user+"";
-        ret2.pic_info=ret;
 
-        res.send(JSON.stringify(ret2));
+        res.send(JSON.stringify(ret));
     });
 });
 

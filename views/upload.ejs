@@ -45,7 +45,7 @@
                 <div style="margin:0 auto;width:90%;margin-top:35px;margin-bottom:20px;">
                 <form class="form-horizontal" method="post" action="/upload?caseid=<%= caseid %>" enctype="multipart/form-data">
                     病历(<strong style="color:#0066ff"><%= caseid %></strong>)尚不存在病理图片，请先上传：
-                    <input type="file" name="upfile" style="display:inline"/>
+                    <input type="file" name="upfile" style="display:inline" id="upFile"/>
                     <br>
                     <br>
                     请完善该病历其他信息:
@@ -70,6 +70,8 @@
                             <input type="text" name="area" class="form-control" id="input-area" placeholder="请输入病患区域">
                         </div>
                     </div>
+
+
                     <div class="form-group">
                         <label for="input-place" class="col-sm-2 control-label">诊断信息</label>
                         <div class="col-sm-10">
@@ -84,6 +86,22 @@
                             </select>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="input-place" class="col-sm-2 control-label">治疗计划</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="treatment" class="form-control" id="input-treatment" placeholder="请输入诊断信息">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-place" class="col-sm-2 control-label">牙齿编号</label>
+                        <div class="col-sm-10">
+                            <select name="status" id="input-status" class="form-control" required="">
+                                <option value="存在">存在</option>
+                                <option value="缺失">缺失</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <input type="submit" id="submitter" value="确认上传" class="btn btn-primary" style="left:80%;position:relative">
                     </div>

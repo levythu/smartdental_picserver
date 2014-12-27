@@ -12,6 +12,12 @@ $(document).ready(function()
             alert("请输入一个用户id");
             return false;
         }
+        if ($("#upFile")[0].value=="")
+        {
+            alert("请选择上传图片");
+            return false;
+        }
+
 
         if ($("#input-name")[0].value=="")
         {
@@ -34,6 +40,12 @@ $(document).ready(function()
         if ($("#input-tooth")[0].value=="")
         {
             alert("请输入该病理图片的牙齿编号");
+            return false;
+        }
+
+        if ($("#input-treatment")[0].value=="")
+        {
+            alert("请输入治疗方案");
             return false;
         }
     });
