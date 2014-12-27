@@ -115,4 +115,51 @@ router.post('/',function(req,res)
     });
 });
 
+
+router.get('/tooth', function(req, res) {
+    if (req.query.user==null)
+    {
+        res.send("{}");
+        return;
+    }
+    var qr={
+        belongs:  req.query.user+"",
+        delete:   0
+    };
+    db[PIC_DB].find(qr,function(err,docs)
+    {
+        if (err || docs.length==0)
+        {
+            var ret={};
+            ret._id=req.query.user+"";
+            ret.pic_info=[];
+            res.send(JSON.stringify(ret));
+            return;
+        }
+        var ret=[];
+        var obj;
+        for (var i=0;i<docs.length;i++)
+        {
+            obj={};
+            if (docs[i].tooth==null)
+                obj.tooth=0;
+            else
+                obj.tooth=docs[i].tooth;
+
+            if (docs[i].diagnose==null)
+                obj.diagnose="暂无诊断信息";
+            else
+                obj.diagnose=docs[i].diagnose;
+
+            obj.caseid=docs[i].caseid;
+            ret.push(obj);
+        }
+        var ret2={};
+        ret2._id=req.query.user+"";
+        ret2.pic_info=ret;
+
+        res.send(JSON.stringify(ret2));
+    });
+});
+
 module.exports = router;

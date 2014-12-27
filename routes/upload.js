@@ -45,6 +45,8 @@ router.post('/', function(req, res)
         pic_name: req.body.name,
         position: req.body.area,
         belongs:  req.body.uid,
+        diagnose: req.body.diagnose,
+        tooth:    req.body.tooth,
         date:     (new Date()).getTime(),
         delete:   0,
         record:   0,
