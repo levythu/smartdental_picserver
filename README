@@ -8,3 +8,9 @@ How to deploy?
 
         npm install
         sudo npm start
+
+How to invoke the API?
+    
+    -- To get all the picture of one certain user, get /userinfo?user=USERNAME
+    -- To get one exact case, get /getinfo?caseid=CASEID
+    -- For getting pictures of one user by other informations, get /userinfo/tooth?user=USERNAME
